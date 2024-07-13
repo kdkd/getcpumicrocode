@@ -1,7 +1,7 @@
-This is a single shell script that runs in both bash and csh and on both
-Linux and FreeBSD.  It displays the current CPU model name and microcode
-version on any amd64 / x86_64 CPU.  It does not have any dependencies other
-than what ships with the OS.
+This is a single shell script that runs in bash, csh and a generic POSIX
+shell (e.g. /bin/sh) on both Linux and FreeBSD. It displays the current
+CPU model name and microcode version on any amd64 / x86_64 CPU. It does not
+have any dependencies other than what ships with the OS.
 
 On Linux it can run as any user, on FreeBSD it requires root access to
 execute `cpucontrol`.

@@ -5,9 +5,9 @@ echo $shell | grep -q csh && goto CSH
 #bash
 o=`uname -s`
 p=`uname -m`
-if [ $o == "FreeBSD" ] && [ $p == "amd64" ]
+if [ $o = "FreeBSD" ] && [ $p = "amd64" ]
 then
- if [ "$EUID" -ne 0 ]
+ if [ `id -u` -ne 0 ]
  then
   echo "Requires root on FreeBSD"
   exit 1
@@ -16,7 +16,7 @@ then
  cpucontrol -m 8b /dev/cpuctl0 | awk '{print $NF}'
  exit
 fi
-if [ $o == "Linux" ] && [ $p == "x86_64" ]
+if [ $o = "Linux" ] && [ $p = "x86_64" ]
 then
  cat /proc/cpuinfo | grep -m 1 "model name" | awk -F': ' '{print $2}'
  cat /proc/cpuinfo | grep -m 1 microcode | awk '{print $NF}'
